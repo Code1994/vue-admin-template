@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <h3 class="title">vue-admin-template</h3>
+      <h3 class="title">Inner Manager</h3>
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
@@ -89,13 +89,8 @@ export default {
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.loading = true
-          this.$store.dispatch('Login', this.loginForm).then(() => {
-            this.loading = false
-            this.$router.push({ path: this.redirect || '/' })
-          }).catch(() => {
-            this.loading = false
-          })
+          // this.loading = true
+          this.$router.push({ path: this.redirect || '/' })
         } else {
           console.log('error submit!!')
           return false

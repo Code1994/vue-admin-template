@@ -136,7 +136,7 @@ export const constantRouterMap = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'http://jsgoshu.cn',
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
