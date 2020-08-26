@@ -14,8 +14,9 @@ import Layout from '../views/layout/Layout'
 * alwaysShow: true               if set true, will always show the root menu, whatever its child routes length
 *                                if not set alwaysShow, only more than one route under the children
 *                                it will becomes nested mode, otherwise not show the root menu
-* redirect: noredirect           if `redirect:noredirect` will no redirect in the breadcrumb
-* name:'router-name'             the name is used by <keep-alive> (must set!!!)
+* redirect: 'noRedirect'           if `redirect:noRedirect` will no redirect in the breadcrumb
+* name:'router-name'             the name is used by <keep-alive> (must set!!!), and if not set it, the breadcrumb will not
+*                                show current route.
 * meta : {
     title: 'title'               the name show in subMenu and breadcrumb (recommend set)
     icon: 'svg-name'             the icon show in the sidebar
@@ -27,8 +28,6 @@ import Layout from '../views/layout/Layout'
 import swapRoutes from './swap'
 export const constantRouterMap = [
   ...swapRoutes,
-  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
-  { path: '/404', component: () => import('@/views/404'), hidden: true },
   {
     path: '/',
     component: Layout,
@@ -50,7 +49,8 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
+  { path: '/404', component: () => import('@/views/404'), hidden: true },
   { path: '*', redirect: '/404', hidden: true }
 ]
 

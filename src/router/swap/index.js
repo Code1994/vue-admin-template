@@ -3,14 +3,17 @@ import Layout from '@/views/layout/Layout'
 const routes = [
   {
     path: '/swap',
+    name: 'Swap',
     component: Layout,
     meta: { title: '货币兑换', icon: 'form' },
+    redirect: 'noRedirect',
     children: [
       {
         path: 'product-params',
         name: 'ProductParams',
         meta: { title: '产品参数配置', icon: 'form' },
-        // FIXME: 如果children只有一个 侧边栏展示有问题
+        alwaysShow: true,
+        redirect: 'noRedirect',
         children: [
           {
             path: 'trading-time',
@@ -21,7 +24,12 @@ const routes = [
             path: 'test',
             name: 'Test',
             meta: { title: '侧边栏test', icon: 'form' }
-            // hidden: true
+          },
+          {
+            path: 'test2',
+            name: 'Test2',
+            meta: { title: '侧边栏test2', icon: 'form' },
+            hidden: true
           }
         ]
       },
