@@ -1,12 +1,15 @@
 import Cookies from 'js-cookie'
 
 const app = {
+  // namespaced will make mutations and actions in a new scoped. state and getters is in scoped even if namespaced not set.
+  namespaced: true,
   state: {
     sidebar: {
       opened: !+Cookies.get('sidebarStatus'),
       withoutAnimation: false
     },
-    device: 'desktop'
+    device: 'desktop',
+    token: 'token'
   },
   mutations: {
     TOGGLE_SIDEBAR: state => {
@@ -25,6 +28,9 @@ const app = {
     },
     TOGGLE_DEVICE: (state, device) => {
       state.device = device
+    },
+    SET_TOKEN: (state, token) => {
+      state.token = token
     }
   },
   actions: {

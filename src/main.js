@@ -13,11 +13,22 @@ import store from './store'
 import router from './router'
 
 import '@/icons' // icon
-import '@/permission' // permission control
+import '@/utils/permission' // permission control
 
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
+
+Vue.prototype.$err = function(msg) {
+  this.$message.error(msg)
+}
+
+Vue.prototype.$success = function(msg) {
+  this.$message({
+    message: msg,
+    type: 'success'
+  })
+}
 
 new Vue({
   el: '#app',
