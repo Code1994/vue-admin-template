@@ -5,7 +5,16 @@
 </template>
 
 <script>
+import test from '@/api/baseList'
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    this.getCommissionStatusList()
+  },
+  methods: {
+    getCommissionStatusList() {
+      return test.getCommissionStatusList().then().catch()
+    }
+  }
 }
 </script>
