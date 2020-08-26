@@ -1,3 +1,4 @@
+// TODO: 该文件利用token拉取用户的权限菜单 再生成对应的侧边栏与路由表
 import router from './router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
