@@ -21,9 +21,10 @@ export default {
 
 <style scoped>
 .app-main {
+  position: relative;
   /* 48=topbar 50= avbar */
   min-height: calc(100vh - 98px);
-  position: relative;
+  padding: 15px;
   overflow: hidden;
 }
 </style>

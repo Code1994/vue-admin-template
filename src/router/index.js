@@ -24,10 +24,10 @@ import Layout from '../views/layout/Layout'
   }
 **/
 
-// 换汇
-import swapRoutes from './swap'
+// 权限管理
+import permissionRoutes from './permissionManager'
 export const constantRouterMap = [
-  ...swapRoutes,
+  ...permissionRoutes,
   {
     path: '/',
     component: Layout,
@@ -38,16 +38,6 @@ export const constantRouterMap = [
       path: 'dashboard',
       component: () => import('@/views/dashboard/index')
     }]
-  },
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'http://jsgoshu.cn',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
   },
   {
     path: '/login',

@@ -9,7 +9,6 @@ NProgress.configure({ showSpinner: false })// NProgress configuration
 
 const whiteList = ['/login'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
-  console.log('router before')
   NProgress.start()
   const { token } = store.state.app
   if (token) {

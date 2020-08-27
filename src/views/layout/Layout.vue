@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%;">
     <div class="top-bar">
       <img
         class="logo"
@@ -114,15 +114,18 @@ export default {
   @import "src/styles/mixin.scss";
   .top-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 48px;
     padding-right: 80px;
     // background-color: skyblue;
     .logo {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 200px;
-      height: 100%;
+      height: 48px;
       cursor: pointer;
     }
     .system {
