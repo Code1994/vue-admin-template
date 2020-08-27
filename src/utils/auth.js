@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-// cookie 
+// cookie
 export const setCookie = (name, value) => {
   return Cookies.set(name, value)
 }
