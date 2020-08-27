@@ -3,7 +3,7 @@ import router from '@/router'
 import store from '@/store'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
-import { Message } from 'element-ui'
+// import { Message } from 'element-ui'
 
 NProgress.configure({ showSpinner: false })// NProgress configuration
 
@@ -23,9 +23,9 @@ router.beforeEach((to, from, next) => {
     if (whiteList.indexOf(to.path) !== -1) {
       next()
     } else {
-      Message({
-        message: '请登录'
-      })
+      // Message({
+      //   message: '请登录'
+      // })
       next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
       NProgress.done()
     }

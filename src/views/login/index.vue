@@ -38,7 +38,7 @@
 
 <script>
 import { isvalidUsername } from '@/utils/validate'
-
+import { mapMutations } from 'vuex'
 export default {
   name: 'Login',
   data() {
@@ -79,6 +79,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['SET_TOKEN']),
     showPwd() {
       if (this.pwdType === 'password') {
         this.pwdType = ''
@@ -90,6 +91,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           // this.loading = true
+          this.SET_TOKEN('token')
           this.$router.push({ path: this.redirect || '/' })
         } else {
           console.log('error submit!!')

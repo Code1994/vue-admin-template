@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 
 const app = {
   // namespaced will make mutations and actions in a new scoped. state and getters is in scoped even if namespaced not set.
-  namespaced: true,
+  // namespaced: true,
   state: {
     sidebar: {
       opened: !+Cookies.get('sidebarStatus'),
